@@ -87,22 +87,44 @@
             background: rgba(0, 0, 0, 0.5);
             color: white;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+        .info-icon {
+            font-size: 15px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .hidden-info {
+            display: none;
+            font-size: 14px;
+            position: absolute;
+            bottom: 40px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .title {
+            font-size: 14px;
+            margin-bottom: 5px;
         }
         .title a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
-            margin-bottom: 10px;
         }
         .title a:hover {
             text-decoration: underline;
         }
-        .subtitle {
-            font-size: 14px;
+        .item:hover .hidden-info {
+            display: none;
+        }
+        .info-icon:hover + .hidden-info {
+            display: block;
         }
         footer {
             background-color: #faa58c;
@@ -111,11 +133,14 @@
             padding: 20px;
         }
     </style>
-
-    <meta property="og:image" content="https://klingai.video/preview-image.jpg"> <meta property="og:image:alt" content="Kling Ai Video Gallery"> <meta property="og:image:width" content="1200"> <meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"> <meta name="twitter:image" content="https://klingai.video/preview-image.jpg">
-<meta name="twitter:title" content="KlingAi Video Gallery - Text-to-Video Sora-like Model">
-<meta property="og:title" content="KlingAi Video Gallery - Text-to-Video Sora-like Model">
+    <meta property="og:image" content="https://klingai.video/preview-image.jpg"> 
+    <meta property="og:image:alt" content="Kling Ai Video Gallery"> 
+    <meta property="og:image:width" content="1200"> 
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image"> 
+    <meta name="twitter:image" content="https://klingai.video/preview-image.jpg">
+    <meta name="twitter:title" content="KlingAi Video Gallery - Text-to-Video Sora-like Model">
+    <meta property="og:title" content="KlingAi Video Gallery - Text-to-Video Sora-like Model">
 </head>
 <body>
     <header>
@@ -132,10 +157,9 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1799840665758765448" target="_blank">prompt of customer @ChillyKuroneko</a></div>
-                    <div class="subtitle">horse made of fire running through a dark forest.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1799840665758765448" target="_blank">prompt of customer @ChillyKuroneko</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">horse made of fire running through a dark forest.</div>
             </div>
         </div>
         <div class="item">
@@ -144,10 +168,9 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800026158907748602" target="_blank">prompt of customer @CreativeAIgency</a></div>
-                    <div class="subtitle">Beautiful female cyborg climbing out of a black oil pond with futuristic oil plant in the background.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800026158907748602" target="_blank">prompt of customer @CreativeAIgency</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">Beautiful female cyborg climbing out of a black oil pond with futuristic oil plant in the background.</div>
             </div>
         </div>
         <div class="item">
@@ -156,10 +179,9 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800025530303144070" target="_blank">prompt of customer @yacolioi </a></div>
-                    <div class="subtitle">A man eating spaghetti underwater, fire coral, deep shadows, godrays.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800025530303144070" target="_blank">prompt of customer @yacolioi</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">A man eating spaghetti underwater, fire coral, deep shadows, godrays.</div>
             </div>
         </div>
         <div class="item">
@@ -168,10 +190,9 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800025238924845449" target="_blank">prompt of customer @Court_Reinland</a></div>
-                    <div class="subtitle">Doge crashing through the wall to the Wall St. trading floor, cinematic lighting.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800025238924845449" target="_blank">prompt of customer @Court_Reinland</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">Doge crashing through the wall to the Wall St. trading floor, cinematic lighting.</div>
             </div>
         </div>
         <div class="item">
@@ -180,10 +201,9 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1799952837713260702" target="_blank">prompt of customer @madpencil_ </a></div>
-                    <div class="subtitle">first person perspective shot of two hands with guns in a video game, character shooting with revolver at targets at a distance, blasts in distance, Unreal Engine.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1799952837713260702" target="_blank">prompt of customer @madpencil_</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">first person perspective shot of two hands with guns in a video game, character shooting with revolver at targets at a distance, blasts in distance, Unreal Engine.</div>
             </div>
         </div>
         <div class="item">
@@ -192,10 +212,9 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1799955456489832817" target="_blank">prompt of customer @altryne</a></div>
-                    <div class="subtitle">A roll of cheese rolling down a steep hill in a busy city.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1799955456489832817" target="_blank">prompt of customer @altryne</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">A roll of cheese rolling down a steep hill in a busy city.</div>
             </div>
         </div>
         <div class="item">
@@ -204,10 +223,9 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800114943477616764" target="_blank">prompt of customer @MH33265695</a></div>
-                    <div class="subtitle">A gray alien floating out of a luminous oval-shaped UFO.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800114943477616764" target="_blank">prompt of customer @MH33265695</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">A gray alien floating out of a luminous oval-shaped UFO.</div>
             </div>
         </div>
         <div class="item">
@@ -216,81 +234,66 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800138348977381720" target="_blank">prompt of customer @MH33265695</a></div>
-                    <div class="subtitle">Cockpit view of a spaceship getting close to an earth-like planet from space and entering its atmosphere, then landing on a beach.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800138348977381720" target="_blank">prompt of customer @MH33265695</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">Cockpit view of a spaceship getting close to an earth-like planet from space and entering its atmosphere, then landing on a beach.</div>
             </div>
         </div>
-
         <div class="item">
             <video autoplay loop muted>
                 <source src="https://video.twimg.com/ext_tw_video/1800135523178336256/pu/vid/avc1/1280x720/ouMOznA7iZsIMfgt.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800135610344304846" target="_blank">prompt of customer @calhim7</a></div>
-                    <div class="subtitle">A hand spinning the Earth in space, with the Earth now rotating steadily among stars and galaxies.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800135610344304846" target="_blank">prompt of customer @calhim7</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">A hand spinning the Earth in space, with the Earth now rotating steadily among stars and galaxies.</div>
             </div>
         </div>
-
         <div class="item">
             <video autoplay loop muted>
                 <source src="https://video.twimg.com/amplify_video/1800148471951077377/vid/avc1/1280x720/R7rnM1VE47dvj4G9.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800148570458505560" target="_blank">prompt of customer @jeepersmedia</a></div>
-                    <div class="subtitle">a Wolf Warrior, werewolf with two legs, bearded, shirtless, golden eyes, hairy shoulders, walking on a beach, bare feet, hand outstretched grasping firmly a flaming sword detailed engraving of glowing Norse runes. turbulent shallow water, dynamic lighting.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800148570458505560" target="_blank">prompt of customer @jeepersmedia</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">a Wolf Warrior, werewolf with two legs, bearded, shirtless, golden eyes, hairy shoulders, walking on a beach, bare feet, hand outstretched grasping firmly a flaming sword detailed engraving of glowing Norse runes. turbulent shallow water, dynamic lighting.</div>
             </div>
         </div>
-
         <div class="item">
             <video autoplay loop muted>
                 <source src="https://video.twimg.com/amplify_video/1800152685905387520/vid/avc1/1280x720/A4aMYwyJVQyGmm_S.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800152745212874888" target="_blank">prompt of customer @shikoba_86</a></div>
-                    <div class="subtitle">drift car on curve overtaking hot dog cart.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800152745212874888" target="_blank">prompt of customer @shikoba_86</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">drift car on curve overtaking hot dog cart.</div>
             </div>
         </div>
-
-
         <div class="item">
             <video autoplay loop muted>
                 <source src="https://video.twimg.com/amplify_video/1800172783152078849/vid/avc1/1280x720/4GKbG7oBcWPkgBDU.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800172845399695820" target="_blank">prompt of customer @Liquid_Cyber</a></div>
-                    <div class="subtitle">photo realistic, original King Kong, on top of spacex super heavy during recent takeoff, King Kong is roaring and banging his chest, Camera angle is zoom from base of rocket to top down view..</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800172845399695820" target="_blank">prompt of customer @Liquid_Cyber</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">photo realistic, original King Kong, on top of spacex super heavy during recent takeoff, King Kong is roaring and banging his chest, Camera angle is zoom from base of rocket to top down view..</div>
             </div>
         </div>
-        
-
         <div class="item">
             <video autoplay loop muted>
                 <source src="https://video.twimg.com/amplify_video/1800174289204957185/vid/avc1/1280x720/FIK4ln5S8XU0DAJ8.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <div>
-                    <div class="title"><a href="https://x.com/ZaneGallery/status/1800174349024199136" target="_blank">prompt of customer @altryne</a></div>
-                    <div class="subtitle">a robot eating an apple, high resolution, reflections, futuristic, movie SFX.</div>
-                </div>
+                <div class="title"><a href="https://x.com/ZaneGallery/status/1800174349024199136" target="_blank">prompt of customer @altryne</a></div>
+                <div class="info-icon">&#9432;</div>
+                <div class="hidden-info">a robot eating an apple, high resolution, reflections, futuristic, movie SFX.</div>
             </div>
         </div>
-        
-
     </div>
     <footer>
         <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSf4pFrlBJkDBDPx38033xdP0V1zhYTNw4UYufFPJuqVQ8fq3w/viewform?usp=sf_link">Contributions or suggestions</a> Email: KlingAiVideo@gmail.com</p>
