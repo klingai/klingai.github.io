@@ -222,7 +222,24 @@ src="https://www.facebook.com/tr?id=1134871930957578&ev=PageView&noscript=1"
     background-color: #1D6E46;
     color: white;
 }
+/* 添加到现有的CSS中 */
+#promptInput {
+    width: 90%; /* 输入框宽度 */
+    padding: 10px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    border: 2px solid #1D6E46; /* 边框颜色 */
+    border-radius: 5px; /* 边框圆角 */
+    background-color: #232323; /* 背景颜色 */
+    color: white; /* 文字颜色 */
+    margin: 20px 0; /* 外边距 */
+    resize: none; /* 防止用户调整输入框大小 */
+}
 
+/* 可选：当输入框获得焦点时改变边框颜色 */
+#promptInput:focus {
+    border-color: #06C667; /* 焦点时的边框颜色 */
+    outline: none; /* 移除默认的轮廓 */
+}
 
     </style>
     <meta property="og:image" content="https://klingai.video/preview-image1.jpg"> 
@@ -259,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="header-left">KlingAi.Video</div>
         <div class="header-right">
             <span>Get Access to Kling AI —— Text-to-Video Sora-like Model</span><br>
+            <textarea id="promptInput" placeholder="Enter your video prompt here..." rows="4" style="width: 90%; margin: 20px 0; padding: 10px; font-size: 16px; border: 2px solid #1D6E46; border-radius: 5px; background-color: #232323; color: white;"></textarea>
 <div class="cta-button-container">
     <a href="https://buy.stripe.com/4gw8ABege351fbW9AA" class="cta-button" id="tryPromptButton">Try Your Prompt >></a>
 </div>
