@@ -81,6 +81,19 @@
     </div>
 
     <script>
+        function jsonp(url, callback) {
+            const scriptElement = document.createElement('script');
+            const callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+            window[callbackName] = function(data) {
+                delete window[callbackName];
+                document.body.removeChild(scriptElement);
+                callback(data);
+            };
+            url += (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+            scriptElement.src = url;
+            document.body.appendChild(scriptElement);
+        }
+
         document.getElementById('shortenerForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const longUrl = encodeURIComponent(document.getElementById('longUrl').value);
@@ -89,22 +102,26 @@
             
             const apiUrl = `https://s.okkla.cn/1.0/shortUrl/shorten?url=${longUrl}&domain=${domain}&prefix=${prefix}`;
             
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const resultDiv = document.getElementById('result');
-                    if (data.success) {
-                        resultDiv.innerHTML = `
-                            <strong>生成的短链接:</strong><br>
-                            <a href="${data.url}" target="_blank">${data.url}</a>
-                        `;
-                    } else {
-                        resultDiv.textContent = '生成短链接失败，请检查您的输入并重试。';
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('result').textContent = '请求出错: ' + error;
-                });
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = '正在生成短链接...';
+            
+            jsonp(apiUrl, function(data) {
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <strong>生成的短链接:</strong><br>
+                        <a href="${data.url}" target="_blank">${data.url}</a>
+                    `;
+                } else {
+                    resultDiv.textContent = '生成短链接失败，请检查您的输入并重试。';
+                }
+            });
+
+            // 添加超时处理
+            setTimeout(() => {
+                if (resultDiv.textContent === '正在生成短链接...') {
+                    resultDiv.textContent = '请求超时。请检查网络连接并重试。';
+                }
+            }, 10000);
         });
     </script>
 </body>
